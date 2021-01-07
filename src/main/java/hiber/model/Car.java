@@ -1,5 +1,6 @@
 package hiber.model;
 
+
 import javax.persistence.*;
 
 /**
@@ -10,6 +11,7 @@ import javax.persistence.*;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Long id;
 
     @Column(name = "model")
@@ -61,13 +63,4 @@ public class Car {
         this.user = user;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", series=" + series +
-                ", user=" + user +
-                '}';
-    }
 }

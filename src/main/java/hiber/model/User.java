@@ -1,5 +1,6 @@
 package hiber.model;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +9,7 @@ public class User {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(name="id")
    private Long id;
 
    @Column(name = "name")
@@ -76,5 +78,16 @@ public class User {
 
    public void setUserCar(Car userCar) {
       this.userCar = userCar;
+   }
+
+   @Override
+   public String toString() {
+      return "User{" +
+              "id=" + id +
+              ", firstName='" + firstName + '\'' +
+              ", lastName='" + lastName + '\'' +
+              ", email='" + email + '\'' +
+              ", userCar=" + userCar +
+              '}';
    }
 }
